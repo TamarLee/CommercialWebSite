@@ -11,13 +11,11 @@
 |
 */
 
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/products', 'ProductsController@showProducts');
 
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+	Voyager::routes();
 });
 
 Auth::routes();
