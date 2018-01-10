@@ -8,11 +8,12 @@ use App\Product;
 class ProductsController extends Controller
 {
     public function showProducts(){
-    	$products = Product::paginate(12);
-    	$products = $products->chunk(3);
+    	$products = Product::paginate(6);
+    	$productsChunk = $products->chunk(3);
 
     	return view('products', [
-    		'products' => $products
+    		'products' => $products,
+    		'productsChunk' => $productsChunk
     	]);
     }
 }

@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            @foreach($products as $chunk)
+            @foreach($productsChunk as $chunk)
             <div class="agile_top_brands_grids">
                 @foreach($chunk as $product)
                 <div class="col-md-4 top_brand_left">
@@ -120,7 +120,8 @@
             @endforeach
 
             <nav class="numbering">
-                <ul class="pagination paging">
+                {{ $products->links() }}
+                <!-- <ul class="pagination paging">
                     <li>
                         <a href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
@@ -136,7 +137,7 @@
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
             </nav>
         </div>
         <div class="clearfix"> </div>
