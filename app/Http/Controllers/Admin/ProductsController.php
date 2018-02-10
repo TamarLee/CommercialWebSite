@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Product;
 
 class ProductsController extends Controller
 {
@@ -38,7 +39,9 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //ფორმას რომ დაასაბმითებს სადაც უნდა გაიგზავნოს ეს ინფორმაცია. შესაბამისი როუტი ანუ.
-        dd($request->all());
+        
+        Product::create($request->all());
+        redirect('/admin/products');
     }
 
     /**
